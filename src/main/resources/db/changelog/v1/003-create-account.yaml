@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-account
+      author: grishenkov
+      changes:
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: status_id
+                  type: INT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_account_status
+                    references: account_status(id)
+              - column:
+                  name: client_id
+                  type: UUID
+                  constraints:
+                    foreignKeyName: fk_account_client
+                    references: client(id)
+              - column:
+                  name: account_type
+                  type: VARCHAR(50)
+              - column:
+                  name: currency_code
+                  type: VARCHAR(10)

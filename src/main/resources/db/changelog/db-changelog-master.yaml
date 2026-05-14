@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/v1/001-create-account-status.yaml
+  - include:
+      file: db/changelog/v1/002-create-client.yaml
+  - include:
+      file: db/changelog/v1/003-create-account.yaml
+  - include:
+      file: db/changelog/v1/004-insert-account-statuses.yaml

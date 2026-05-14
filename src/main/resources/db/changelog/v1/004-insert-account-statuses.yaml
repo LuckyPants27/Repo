@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-insert-account-statuses
+      author: grishenkov
+      changes:
+        - insert:
+            tableName: account_status
+            columns:
+              - column:
+                  name: name
+                  value: NEW
+              - column:
+                  name: description
+                  value: Счёт создан в БД
+        - insert:
+            tableName: account_status
+            columns:
+              - column:
+                  name: name
+                  value: IN_CREATION
+              - column:
+                  name: description
+                  value: Запрос на создание счёта был отправлен в смежную систему
+        - insert:
+            tableName: account_status
+            columns:
+              - column:
+                  name: name
+                  value: CREATED
+              - column:
+                  name: description
+                  value: Счёт создан в смежной системе
+        - insert:
+            tableName: account_status
+            columns:
+              - column:
+                  name: name
+                  value: CANCELLED
+              - column:
+                  name: description
+                  value: Счёт аннулирован
+        - insert:
+            tableName: account_status
+            columns:
+              - column:
+                  name: name
+                  value: CLOSED
+              - column:
+                  name: description
+                  value: Счёт закрыт
