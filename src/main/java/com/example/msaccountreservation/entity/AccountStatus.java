@@ -1,15 +1,11 @@
 package com.example.msaccountreservation.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "account_status")
-@Getter
 @Setter
-@NoArgsConstructor
 public class AccountStatus {
 
     @Id
@@ -22,8 +18,4 @@ public class AccountStatus {
     @Column(length = 255)
     private String description;
 
-    public AccountStatus(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
 }

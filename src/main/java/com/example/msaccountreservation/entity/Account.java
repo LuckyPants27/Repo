@@ -1,16 +1,12 @@
 package com.example.msaccountreservation.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
 
 @Entity
 @Table(name = "account")
-@Getter
-@Setter
 public class Account {
 
     @Id
