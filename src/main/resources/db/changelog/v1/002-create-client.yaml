@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-create-client
+      author: grishenkov
+      changes:
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: full_name
+                  type: VARCHAR(255)
+              - column:
+                  name: citizenship
+                  type: VARCHAR(100)
+              - column:
+                  name: client_type
+                  type: VARCHAR(50)
+              - column:
+                  name: document_number
+                  type: VARCHAR(50)
+              - column:
+                  name: document_series
+                  type: VARCHAR(20)
+              - column:
+                  name: document_type
+                  type: VARCHAR(50)
+              - column:
+                  name: mdm_code
+                  type: BIGINT
